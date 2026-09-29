@@ -1,0 +1,20 @@
+﻿@model Gurin_0._5.Data.Student
+
+@{
+    ViewData["Title"] = "Изменение дисконт-карты";
+}
+<h2 class="h2">Изменение дисконт-карты Пив&КО</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Фамилия</label>
+        <input type="text" name="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value=@Model?.LastName>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Имя</label>
+        <input type="text" name="firstName" class="form-control" id="exampleInputPassword1" value=@Model?.FirstName>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Изменить</button>
+</form>

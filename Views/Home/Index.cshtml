@@ -1,0 +1,39 @@
+﻿@model List<Gurin_0._5.Data.Student>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a href="/home/add"><button class="btn btn-primary">Новый студент</button></a>
+
+
+<form method="post" class="row row-cols-lg-auto g-3 align-items-center mt-1">
+
+  <div class="col-12">
+    <input type="text" name="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Фамилия">
+  </div>
+  <div class="col-12">
+    <input type="text" name="firstName" class="form-control" id="exampleInputPassword1" placeholder="Имя">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Поиск</button>
+</form>
+
+<table class="table">
+    <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Движуха</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.LastName</td>
+            <td>@item.FirstName</td>
+            <td>
+                <a href="/home/edit/@item.Id">Редактировать</a>
+                <a href="/home/remove/@item.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>
